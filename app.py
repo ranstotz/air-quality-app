@@ -2,8 +2,6 @@ from flask import jsonify, make_response
 import os
 from flask import Flask, jsonify, render_template, send_from_directory
 
-from server.covid_data import get_state_data, get_country_data
-
 app = Flask(__name__, static_folder='./client/dist',
             template_folder='./client/dist')
 
