@@ -1,24 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import BellIcon from './icons/bell.svg';
+import MessengerIcon from './icons/messenger.svg';
+import CaretIcon from './icons/caret.svg';
+import PlusIcon from './icons/plus.svg';
+import CogIcon from './icons/cog.svg';
+import ChevronIcon from './icons/chevron.svg';
+import ArrowIcon from './icons/arrow.svg';
+import BoltIcon from './icons/bolt.svg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar>
+      <NavItem icon={<PlusIcon />} />
+      <NavItem icon={<BellIcon />} />
+      <NavItem icon={<MessengerIcon />} />
+    </Navbar>
+  );
+}
+
+function Navbar(props) {
+  return (
+    <nav className="navbar">
+      <ul className="navbar-nav">{ props.children }</ul>
+    </nav>
+  );
+}
+
+function NavItem(props) {
+  return (
+    <li className="nav-item">
+      <a href="#" className="icon-button">
+        {props.icon}
+      </a>
+    </li>
   );
 }
 
